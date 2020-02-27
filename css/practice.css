@@ -1,0 +1,79 @@
+* {
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+.title { background: lightseagreen; }
+.nav { background: indigo; }
+.login { background: rgb(255, 1, 128); }
+.welcome { background: lightyellow; }
+.events { background: lightgreen; }
+.sidebar { background: yellow; }
+.promotions { background: lightsalmon; }
+.con { background: red; }
+.footer { background: cyan; }
+
+body {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 30vh 30vh 30vh 30vh 30vh 30vh 30vh 30vh;   /* based on the number of rows */
+    grid-template-areas:
+
+    "title login" /* Row one: hero spans two columns. */
+    "nav nav" /* Row two: each is one cell. */
+    "sidebar sidebar" /* Row four: each is one cell. */
+    "welcome welcome" /* Row three: third-service spans two columns.  */
+    "events events" /* Row five: each is one cell. */
+    "promotions promotions" /* Row four: each is one cell. */
+    "con con" /* Row six: each is one cell. */
+    "footer footer" /* Row seven: each is one cell. */
+}
+
+.title { grid-area: title; }
+.nav { grid-area: nav; }
+.welcome { grid-area: welcome; }
+.login{ grid-area: login; }
+.events { grid-area: events; }
+.promotions { grid-area: promotions; }
+.sidebar { grid-area: sidebar; }
+.con { grid-area: con; }
+.footer { grid-area: footer; }
+
+
+/* Tablet */
+
+@media screen and ( min-width: 500px ) {
+
+    body {
+        grid-template-columns: 50% 50%; /* 2 columns! */
+        grid-template-rows: 30vh 30vh 30vh 30vh 30vh 30vh 30vh; /* 7 Rows! */
+        grid-template-areas:
+            "title login" /* Row one: hero spans two columns. */
+            "nav nav" /* Row two: each is one cell. */
+            "welcome welcome" /* Row three: third-service spans two columns.  */
+            "sidebar sidebar" /* Row four: each is one cell. */
+            "events promotions" /* Row five: each is one cell. */
+            "con con" /* Row six: each is one cell. */
+            "footer footer" /* Row seven: each is one cell. */
+    }
+}
+
+/* Desktop size */
+@media screen and ( min-width: 1024px ) {
+
+    body {
+        grid-template-columns:
+            25%
+            25%
+            25%
+            25%; /* One third! */
+        grid-template-rows: 35vw 35vw 35vw 35vw 35vw; /* Use auto, with real content, unless you're sure of a specific size! */
+        grid-template-areas:
+            "title nav nav login"
+            "welcome welcome welcome welcome"
+            "events events promotions sidebar"
+            "con con con sidebar"
+            "footer footer footer sidebar";
+    }
+}

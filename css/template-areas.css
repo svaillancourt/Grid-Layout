@@ -7,7 +7,7 @@
 body {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 30vh 30vh 30vh 30vh 30vh 30vh 30vh;
+    grid-template-rows: 30vh 30vh 30vh 30vh 30vh 30vh;
 }
 
 .hero { background: lightsalmon;}
@@ -44,12 +44,12 @@ body {
     
     body {
         grid-template-columns: 
-            calc( 100% / 3 )    /* One third*/
+            calc( 100% / 3 )   /* One third*/
             calc( 100% / 6 )   /* Half of one third...*/
-            calc( 100% / 6 ) ; /* Half of one third...*/
-            calc( 100% / 3 ) ; /* one third */
+            calc( 100% / 6 )  /* Half of one third...*/
+            calc( 100% / 3 );  /* one third */
 
-        grid-template-rows: 35vw 35vw 35vw 35vw;  /* Use auto, with real content unless you're sure of a specific size! */
+        grid-template-rows: 35vw 35vw 35vw 35vw ;  /* Use auto, with real content unless you're sure of a specific size! */
         grid-template-areas:
             "hero hero hero hero" /* Row one: hero spans two colums.*/
             "first-service second-service second-service third-service " /* Row two: each is one cell. */
