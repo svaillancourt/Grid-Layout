@@ -1,0 +1,104 @@
+/* Let's try css3 grid */
+/* check out thi great guid https://css-tricks.com/snippets/css/complete-guide-grid/ */
+
+* { /* Basic default browser style reset */
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* We need a grid container, to contain our grid items! */
+#css-grid {
+    display: grid;
+    grid-template-columns: 
+        20%  /* Column 1 */
+        20%  /* Column 2 */
+        15%  /* Column 3 */
+        15%  /* Column 4 */
+        30%; /* Column 5 */
+
+    grid-template-rows:     /* View Height = "vh" */
+        20vh  /* row 1 */
+        20vh  /* row 2 */
+        25vh  /* row 3 */
+        25vh  /* row 4 */
+        10vh; /* row 5 */
+}
+
+/* Border so we cam see our rows & colums */
+
+#css-grid > * {
+    border: 2px dashed darkgray;    /* size, pattern, color */
+}
+
+#navigation {
+    grid-column-start: 2;
+    grid-column-end: span 3; /* Span is how many cells to take up! */
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+#sidebar {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+#sidebar {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: span 3; /* Span is how many cells to take up! */
+}
+
+#hero {
+    /* grid-column: 2 / span 4;
+    grid-row: 2; */
+
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: span 3; /* Span is how many cells to take up! */
+}
+
+#content-1,
+#content-2,
+#content-3{
+    /* grid-row: 3;  1 is the default */
+
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: span 1; /* Span is how many cells to take up! */
+}
+
+#content-2{
+    /* grid-column: 3 / span 2; 
+    grid-row: 3;  1 is the default */
+    
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: span 2; /* Span is how many cells to take up! */
+}
+
+#big-content-1,
+#big-content-2{
+    /* grid-column:  span 2; 
+    grid-row: 4;  1 is the default */
+
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: span 2; /* Span is how many cells to take up! */
+}
+
+#link{
+    /* grid-column: span 2; */
+
+    grid-column-start: 5;
+    grid-column-end: 5;
+    grid-row-start: 5;
+    grid-row-end: 1; /* Span is how many cells to take up! */
+}

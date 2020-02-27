@@ -1,0 +1,73 @@
+* {
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 30vh 30vh 30vh 30vh 30vh 30vh 30vh;
+}
+
+.hero { background: lightsalmon;}
+.first-service{ background: lightseagreen}
+.second-service { background: lightsteelblue}
+.third-service { background: lightyellow}
+.other-links { background: lightgreen}
+.copyright-info{ background: rgb(177, 68, 255);}
+
+/* tablet mode */
+
+@media screen and (min-width: 500px) {
+
+    body {
+        grid-template-columns: 50% 50% ; /* 2 columns*/
+        grid-template-rows: 30vh 30vh 30vh 30vh;  /* 4 rows */
+        grid-template-areas:
+            "hero hero" /* Row one: hero spans two colums.*/
+            "first-service second-service" /* Row two: each is one cell. */
+            "third-service third-service" /* Row three: thrid-service spans two columns. */
+            "other-links copyright-info" /* Row four: each is one cell */
+    }
+
+    .hero{ grid-area: hero;}
+    .first-service{ grid-area: first-service; }
+    .second-service{ grid-area: second-service; }
+    .third-service{ grid-area: third-service; }
+    .other-links{ grid-area: other-links; }
+    .copyright-info{ grid-area: copyright-info; }
+
+}
+
+@media screen and (min-width: 1024px) {
+    
+    body {
+        grid-template-columns: 
+            calc( 100% / 3 )    /* One third*/
+            calc( 100% / 6 )   /* Half of one third...*/
+            calc( 100% / 6 ) ; /* Half of one third...*/
+            calc( 100% / 3 ) ; /* one third */
+
+        grid-template-rows: 35vw 35vw 35vw 35vw;  /* Use auto, with real content unless you're sure of a specific size! */
+        grid-template-areas:
+            "hero hero hero hero" /* Row one: hero spans two colums.*/
+            "first-service second-service second-service third-service " /* Row two: each is one cell. */
+            "other-links other-links copyright-info copyright-info" /* Row four: each is one cell */
+    }
+}
+
+/* Let's try positioning...*/
+.first-service,
+.second-service,
+.third-service{
+    width: 50%; /* Precent is based on the available cell space! */
+    height: 50%; /* Precent is based on the available cell space! */
+    justify-self: center;  /* Horitzontal position (start, center, end.) */
+    align-self: center;  /* l position (start, center, end.) */
+}
+
+.second-service { /* Slightly bigger, this one will stand out! */
+    width:75%;
+    height:75%;
+}
